@@ -1,6 +1,4 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { userDescription } from './resources/user';
-import { companyDescription } from './resources/company';
 import { ticketDescription } from './resources/ticket';
 
 export class Heinzelmann implements INodeType {
@@ -33,22 +31,12 @@ export class Heinzelmann implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'User',
-						value: 'user',
-					},
-					{
-						name: 'Company',
-						value: 'company',
-					},
-					{
 						name: 'Ticket',
 						value: 'ticket',
 					},
 				],
-				default: 'user',
+				default: 'ticket',
 			},
-			...userDescription,
-			...companyDescription,
 			...ticketDescription,
 		],
 	};

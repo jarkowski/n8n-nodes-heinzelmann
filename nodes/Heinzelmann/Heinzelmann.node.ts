@@ -19,7 +19,6 @@ export class Heinzelmann implements INodeType {
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [{ name: 'heinzelmannApi', required: true }],
 		requestDefaults: {
-			baseURL: 'https://api.example.com/v2',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',

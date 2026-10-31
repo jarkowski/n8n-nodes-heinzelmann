@@ -1,5 +1,5 @@
 import type {
-	IAuthenticateGeneric,
+	IAuthenticate,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
@@ -15,6 +15,15 @@ export class HeinzelmannApi implements ICredentialType {
 
 	properties: INodeProperties[] = [
 		{
+			displayName: 'Base URL',
+			name: 'baseUrl',
+			type: 'string',
+			required: true,
+			default: '',
+			placeholder: 'https://heinzelmann.example.com',
+			description: 'Base URL of your Heinzelmann API, without a trailing slash',
+		},
+		{
 			displayName: 'Access Token',
 			name: 'accessToken',
 			type: 'string',
@@ -24,19 +33,18 @@ export class HeinzelmannApi implements ICredentialType {
 		},
 	];
 
-	authenticate: IAuthenticateGeneric = {
-		type: 'generic',
-		properties: {
-			headers: {
-				Authorization: '=Bearer {{$credentials.accessToken}}',
-			},
-		},
+	authenticate: IAuthenticate = async (credentials, requestOptions) => {
+		requestOptions.baseURL = String(credentials.baseUrl).replace(/\/+$/, '');
+		requestOptions.headers = {
+			...requestOptions.headers,
+			Authorization: `Bearer ${credentials.accessToken as string}`,
+		};
+		return requestOptions;
 	};
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://api.example.com/v2',
-			url: '/v1/user',
+			url: '/GetTickets', // TODO: replace with a real authenticated endpoint of the Heinzelmann API
 		},
 	};
 }

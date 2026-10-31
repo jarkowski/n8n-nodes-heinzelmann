@@ -10,7 +10,7 @@ export class Heinzelmann implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with the Heinzelmann API',
+		description: 'Interact with the Heinzelmann REST API',
 		defaults: {
 			name: 'Heinzelmann',
 		},

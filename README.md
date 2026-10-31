@@ -51,6 +51,8 @@ The node supports every endpoint of the Heinzelmann REST API. Parameters are sen
 
 The Heinzelmann API does not support pagination. "Get Many" operations always request all results, and the **Limit** option only trims the results that were received.
 
+According to the API documentation, "Phone Call → Create" returns the ID of the saved call and "Phone Call → Save Note" returns a boolean. Plain values like these are output as `{ "data": <value> }`.
+
 ## Credentials
 
 _If users need to authenticate with the app/service, provide details here. You should include prerequisites (such as signing up with the service), available authentication methods, and how to set them up._

@@ -1,4 +1,5 @@
 import type { INodeProperties } from 'n8n-workflow';
+import { wrapPlainResponse } from '../../shared/wrapPlainResponse';
 import { phoneCallCreateDescription } from './create';
 import { phoneCallGetManyDescription } from './getAll';
 import { phoneCallSaveNoteDescription } from './saveNote';
@@ -27,6 +28,9 @@ export const phoneCallDescription: INodeProperties[] = [
 						method: 'POST',
 						url: '/api/SaveTapiCall',
 					},
+					output: {
+						postReceive: [wrapPlainResponse],
+					},
 				},
 			},
 			{
@@ -50,6 +54,9 @@ export const phoneCallDescription: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '/api/SaveCallNotice',
+					},
+					output: {
+						postReceive: [wrapPlainResponse],
 					},
 				},
 			},

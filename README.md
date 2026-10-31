@@ -1,6 +1,6 @@
 # n8n-nodes-heinzelmann
 
-This is an n8n community node. It lets you use _app/service name_ in your n8n workflows.
+This is an n8n community node. It lets you use _app/service name_ in your n8n workflows. It is not form production use. It is used for testing only.
 
 _App/service name_ is _one or two sentences describing the service this node integrates with_.
 

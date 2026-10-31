@@ -1,0 +1,1082 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Heinzelmann API Dokumentation",
+        "description": "Beschreibung der API Funktionen in Heinzelmann",
+        "contact": {
+            "email": "support@fair-computer.de"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/Heinzelmann/public"
+        }
+    ],
+    "paths": {
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Authentifizierung"
+                ],
+                "summary": "Authentifizierung mit Heinzelmann",
+                "operationId": "535ffeda4b78916efd658b2844ea897a",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "password"
+                        }
+                    },
+                    {
+                        "name": "remember_me",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "bit"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit Bearer Token"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/AddTicket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Erstellt ein Ticket in Heinzelmann",
+                "operationId": "1eb76e41c7fa29d9a0ea2d29ad368e35",
+                "parameters": [
+                    {
+                        "name": "contact_id",
+                        "in": "query",
+                        "description": "ID des Kontakts",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "ShortDescr",
+                        "in": "query",
+                        "description": "Titel des Tickets",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "LongDescr",
+                        "in": "query",
+                        "description": "Inhalt Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "CategoryID1",
+                        "in": "query",
+                        "description": "ID der 1. Kategorie",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "CategoryID2",
+                        "in": "query",
+                        "description": "ID der 2. Kategorie",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "prio_id",
+                        "in": "query",
+                        "description": "ID der Priorität",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "expense",
+                        "in": "query",
+                        "description": "Aufwand des Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "expExpense",
+                        "in": "query",
+                        "description": "Erwarteter Aufwand des Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "typeid",
+                        "in": "query",
+                        "description": "ID des Tickettyps",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "eventdate",
+                        "in": "query",
+                        "description": "Geändertes Ticketdatum",
+                        "required": false,
+                        "schema": {
+                            "type": "datetime"
+                        }
+                    },
+                    {
+                        "name": "expires",
+                        "in": "query",
+                        "description": "Fälligkeitsdatum",
+                        "required": false,
+                        "schema": {
+                            "type": "datetime"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/UpdateTicket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Ändert ein bestehendes Ticket in Heinzelmann",
+                "operationId": "0953f17b1f3b45c6f44e820b3d2ef165",
+                "parameters": [
+                    {
+                        "name": "TicketID",
+                        "in": "query",
+                        "description": "ID des zu ändernden Tickets",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "ContactID",
+                        "in": "query",
+                        "description": "ID des Kontakts",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "Title",
+                        "in": "query",
+                        "description": "Titel des Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "EventText",
+                        "in": "query",
+                        "description": "Inhalt Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Category1ID",
+                        "in": "query",
+                        "description": "ID der 1. Kategorie",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "Category2ID",
+                        "in": "query",
+                        "description": "ID der 2. Kategorie",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "PriorityID",
+                        "in": "query",
+                        "description": "ID der Priorität",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "StatusID",
+                        "in": "query",
+                        "description": "StatusID des Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "TicketTypeID",
+                        "in": "query",
+                        "description": "ID des Tickettyps",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "DueDate",
+                        "in": "query",
+                        "description": "Fälligkeitsdatum",
+                        "required": false,
+                        "schema": {
+                            "type": "datetime"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/AddDeviceToTicket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Weise einem Ticket ein Asset anhand des Gerätenamens, des Hostnamens und optional der Geräte-ID zu",
+                "operationId": "7ab530b8966458d3daa3c1867d019a0d",
+                "parameters": [
+                    {
+                        "name": "DeviceName",
+                        "in": "query",
+                        "description": "Name des Assets",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Hostname",
+                        "in": "query",
+                        "description": "Hostname des Assets",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "TicketID",
+                        "in": "query",
+                        "description": "ID des Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "DeviceID",
+                        "in": "query",
+                        "description": "ID des Geräts, wenn Gerätebezeichnung und Hostname nicht ausreichen, um das Asset zu identifizieren",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Asset verknüpft"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/SetTicketStatusDone": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Setzt ein Ticket in Heinzelmann auf den Status DONE",
+                "operationId": "87b1db8d4cc213caff4ab3fa03f1b9d9",
+                "parameters": [
+                    {
+                        "name": "ticketid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/CloseTicket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Schließt ein Ticket in Heinzelmann",
+                "operationId": "c1bf27f94ebd240d0ca97e9657dba01f",
+                "parameters": [
+                    {
+                        "name": "ticketid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/ReopenTicket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Öffnet ein geschlossenes Ticket in Heinzelmann erneut",
+                "operationId": "b1db6de17c442ed91422aeefd8b139da",
+                "parameters": [
+                    {
+                        "name": "ticketid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/DeleteTicket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Löscht ein Ticket in Heinzelmann",
+                "operationId": "52515fcf0b6d8b17a6ecc035a796110e",
+                "parameters": [
+                    {
+                        "name": "ticketid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/AddTicketEvent": {
+            "post": {
+                "tags": [
+                    "TicketEvent"
+                ],
+                "summary": "Erstellt ein TicketEvent in Heinzelmann",
+                "operationId": "93e34ee26c9e7b5bdcc318791c7c5a4b",
+                "parameters": [
+                    {
+                        "name": "ticketid",
+                        "in": "query",
+                        "description": "ID des Tickets, zu dem ein Event erstellt werden soll",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "longdescr",
+                        "in": "query",
+                        "description": "Inhalt Tickets",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "notpublic",
+                        "in": "query",
+                        "description": "Interne Notiz",
+                        "required": false,
+                        "schema": {
+                            "type": "bit"
+                        }
+                    },
+                    {
+                        "name": "expense",
+                        "in": "query",
+                        "description": "Aufwand des Events",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "eventdate",
+                        "in": "query",
+                        "description": "Geändertes TicketEventdatum",
+                        "required": false,
+                        "schema": {
+                            "type": "datetime"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketEventID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/UpdateTicketEvent": {
+            "post": {
+                "tags": [
+                    "TicketEvent"
+                ],
+                "summary": "Ändert ein TicketEvent in Heinzelmann",
+                "operationId": "66de841514f5ca4c2bac4601bb43dabf",
+                "parameters": [
+                    {
+                        "name": "eventid",
+                        "in": "query",
+                        "description": "ID des zu ändernden Events",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "longdescr",
+                        "in": "query",
+                        "description": "Inhalt Tickets",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "notpublic",
+                        "in": "query",
+                        "description": "Interne Notiz",
+                        "required": false,
+                        "schema": {
+                            "type": "bit"
+                        }
+                    },
+                    {
+                        "name": "expense",
+                        "in": "query",
+                        "description": "Aufwand des Events",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "eventdate",
+                        "in": "query",
+                        "description": "Geändertes TicketEventdatum",
+                        "required": false,
+                        "schema": {
+                            "type": "datetime"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit TicketEventID"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/AddDocumentToTicket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Fügt einem Ticket in Heinzelmann ein Dokument hinzu",
+                "operationId": "7102cce12ee7f94357dbdf53f478651f",
+                "parameters": [
+                    {
+                        "name": "tid",
+                        "in": "query",
+                        "description": "ID des Heinzelmann Tickets",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "FileExtension",
+                        "in": "query",
+                        "description": "Dateiendung der Datei, die angehägt werden soll",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "FileName",
+                        "in": "query",
+                        "description": "Name der Datei, die angehängt werden soll",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "UploadFile",
+                        "in": "query",
+                        "description": "Die Datei als Base64String",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit den Daten der übertragenen Datei"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/TapiCalls/{CallState}": {
+            "get": {
+                "tags": [
+                    "Tapi"
+                ],
+                "summary": "Liefert die Anrufe des Tapi Nutzers zurück",
+                "operationId": "56a04a9355e37859af0db6bfb5dae230",
+                "parameters": [
+                    {
+                        "name": "CallState",
+                        "in": "query",
+                        "description": "Typ des Anrufs (Angenommen -> 1, Verpasst -> 2)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Anrufe des Nutzers als JSON-Objekt "
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/ContactByPhoneNumber/{PhoneNumber}": {
+            "get": {
+                "tags": [
+                    "Tapi"
+                ],
+                "summary": "Liefert den Kontakt anhand der Telefonnummer zurück",
+                "operationId": "780e4ce43f4129396e93cdd30de6459f",
+                "parameters": [
+                    {
+                        "name": "PhoneNumber",
+                        "in": "query",
+                        "description": "Die Telefonnummer des Anrufs",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Kontakt der Telefonnummer als JSON-Objekt "
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/Contact/{ContactID}/Tickets": {
+            "get": {
+                "tags": [
+                    "Tapi"
+                ],
+                "summary": "Liefert die letzten 5 Tickets eines Kontakts zurück",
+                "operationId": "a59f138a4f94c716967796d80fc4da69",
+                "parameters": [
+                    {
+                        "name": "ContactID",
+                        "in": "query",
+                        "description": "Die ContactID des Anrufers",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tickets des Kontakts als JSON-Objekt "
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/SaveTapiCall": {
+            "post": {
+                "tags": [
+                    "Tapi"
+                ],
+                "summary": "Speichert einen Anruf in der DB",
+                "operationId": "e2988d98ea4f9198a672ea64d435839e",
+                "parameters": [
+                    {
+                        "name": "PhoneNumber",
+                        "in": "query",
+                        "description": "Die Telefonnummer des Anrufs",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Notice",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "CallState",
+                        "in": "query",
+                        "description": "Typ des Anrufs (Angenommen -> 1, Verpasst -> 2)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "CallDate",
+                        "in": "query",
+                        "description": "Zeitpunkt des Anrufs (Format dd.MM.yyyy hh:mm)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Duration",
+                        "in": "query",
+                        "description": "Dauer des Anrufs in Sekunden",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Die ID des gespeicherten Anrufs"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/SaveCallNotice": {
+            "post": {
+                "tags": [
+                    "Tapi"
+                ],
+                "summary": "Speichert eine Notiz zu einem Anruf",
+                "operationId": "293728f86bd41f1bca4fe82efe187ef6",
+                "parameters": [
+                    {
+                        "name": "TapiCallID",
+                        "in": "query",
+                        "description": "ID des Anrufs",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "Notice",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Bool-Wert ob das Sepichern funktioniert hat"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetCategories": {
+            "get": {
+                "tags": [
+                    "Kategorie"
+                ],
+                "summary": "Liefert Kategorien, optional gefiltert nach Kategorie-Modus, Ticket-Kontext und Tickettyp",
+                "operationId": "e1d4cd858ebc6e8095eacbaf9ec3783f",
+                "parameters": [
+                    {
+                        "name": "cid",
+                        "in": "query",
+                        "description": "Kategorie-Art / Kategorienmodus. Bei cid=1 wird die Child-Ermittlung deaktiviert.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                1,
+                                2
+                            ]
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Kontext der Abfrage. Aktuell relevant: type=ticket.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ticket"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "typeid",
+                        "in": "query",
+                        "description": "Tickettyp-ID. Schränkt sichtbare Kategorien auf den Tickettyp ein.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "activecatid",
+                        "in": "query",
+                        "description": "Bereits ausgewählte Kategorie-ID. Wird zur Markierung als selected/active verwendet.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Wenn gesetzt, werden nur Sub-Kategorien dieser Kategorie zurückgegeben.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit Kategorien"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetGroups": {
+            "get": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Liefert Supportgruppen samt zugeordneten aktiven Supportern",
+                "operationId": "fe87e5dd3e127fe0e63a913c1176bca9",
+                "responses": {
+                    "200": {
+                        "description": "Response mit Supportgruppen und Supportern"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetTickettypes": {
+            "get": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Liefert Tickettypen und deren Daten",
+                "operationId": "3393d8f3e63ab20411a093f6b5b67b96",
+                "parameters": [
+                    {
+                        "name": "typeid",
+                        "in": "query",
+                        "description": "Optional: Liefert nur einen bestimmten Tickettyp",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit Tickettypen"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetContacts": {
+            "get": {
+                "tags": [
+                    "Kontakt"
+                ],
+                "summary": "Liefert die Kontakte",
+                "operationId": "834c54e30db9a099f4d0b093f7da2f91",
+                "responses": {
+                    "200": {
+                        "description": "Response mit Kontakten"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetSupporters": {
+            "get": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Liefert alle verfügbaren Supporter mit Gruppenzuordnung",
+                "operationId": "ed9de0b7527a210ffb9eef3eb146760d",
+                "responses": {
+                    "200": {
+                        "description": "Response mit Supportern"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetFilters": {
+            "get": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Liefert die vordefinierten Ticketlistenfilter des Benutzers",
+                "operationId": "5411b9368ec0bc6da765b4a1dd73b839",
+                "responses": {
+                    "200": {
+                        "description": "Response mit Ticketlistenfiltern"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetTickets": {
+            "get": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Liefert Tickets, optional anhand eines Ticketlistenfilters",
+                "operationId": "3fa760e629ff2b136974ed82c34a7467",
+                "parameters": [
+                    {
+                        "name": "filterid",
+                        "in": "query",
+                        "description": "Optional: ID des anzuwendenden Ticketlistenfilters",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit Tickets"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        },
+        "/api/GetTicket": {
+            "get": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "Liefert alle Daten eines Tickets",
+                "operationId": "3008489120d3045f2fcf7f0b12f3e0f1",
+                "parameters": [
+                    {
+                        "name": "TicketID",
+                        "in": "query",
+                        "description": "ID des Tickets",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response mit Ticketdaten"
+                    },
+                    "default": {
+                        "description": "Es ist ein Fehler aufgetreten."
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Authentifizierung",
+            "description": "Authentifizierung in Heinnzelmann"
+        },
+        {
+            "name": "Ticket",
+            "description": "Alle Funktionen, die das Ticket betrefen"
+        },
+        {
+            "name": "TicketEvent",
+            "description": "Alle Funktionen, die das TicketEvent betreffen"
+        },
+        {
+            "name": "Tapi",
+            "description": "Alle Funktionen, die den TapiClient betreffen"
+        },
+        {
+            "name": "Kategorie",
+            "description": "Kategorie"
+        },
+        {
+            "name": "Kontakt",
+            "description": "Kontakt"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearer_token": {
+                "type": "apiKey",
+                "description": "Enter token in format (Bearer <token>)",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "bearer_token": []
+        }
+    ]
+}

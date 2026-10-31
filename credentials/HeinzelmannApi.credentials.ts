@@ -25,8 +25,8 @@ export class HeinzelmannApi implements ICredentialType {
 			type: 'string',
 			required: true,
 			default: '',
-			placeholder: 'https://heinzelmann.example.com',
-			description: 'Base URL of your Heinzelmann API, without a trailing slash',
+			placeholder: 'http://heinzelmann.example.com/heinzelmann/public',
+			description: 'Base URL of your Heinzelmann API, without a trailing slash. For a default installation, this should be http(s)://&lt;BASE URL&gt;/heinzelmann/public',
 		},
 		{
 			displayName: 'Access Token',

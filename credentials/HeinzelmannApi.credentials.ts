@@ -10,6 +10,11 @@ export class HeinzelmannApi implements ICredentialType {
 
 	displayName = 'Heinzelmann API';
 
+	icon = {
+		light: 'file:../nodes/Heinzelmann/heinzelmann.svg',
+		dark: 'file:../nodes/Heinzelmann/heinzelmann.dark.svg',
+	} as const;
+
 	// Link to your community node's README
 	documentationUrl = 'https://github.com/org/-heinzelmann?tab=readme-ov-file#credentials';
 

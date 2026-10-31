@@ -1,5 +1,14 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
+import { authenticationDescription } from './resources/authentication';
+import { categoryDescription } from './resources/category';
+import { contactDescription } from './resources/contact';
+import { phoneCallDescription } from './resources/phoneCall';
+import { supportGroupDescription } from './resources/supportGroup';
+import { supporterDescription } from './resources/supporter';
 import { ticketDescription } from './resources/ticket';
+import { ticketEventDescription } from './resources/ticketEvent';
+import { ticketFilterDescription } from './resources/ticketFilter';
+import { ticketTypeDescription } from './resources/ticketType';
 
 export class Heinzelmann implements INodeType {
 	description: INodeTypeDescription = {
@@ -31,13 +40,58 @@ export class Heinzelmann implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
+						name: 'Authentication',
+						value: 'authentication',
+					},
+					{
+						name: 'Category',
+						value: 'category',
+					},
+					{
+						name: 'Contact',
+						value: 'contact',
+					},
+					{
+						name: 'Phone Call',
+						value: 'phoneCall',
+					},
+					{
+						name: 'Support Group',
+						value: 'supportGroup',
+					},
+					{
+						name: 'Supporter',
+						value: 'supporter',
+					},
+					{
 						name: 'Ticket',
 						value: 'ticket',
+					},
+					{
+						name: 'Ticket Event',
+						value: 'ticketEvent',
+					},
+					{
+						name: 'Ticket Filter',
+						value: 'ticketFilter',
+					},
+					{
+						name: 'Ticket Type',
+						value: 'ticketType',
 					},
 				],
 				default: 'ticket',
 			},
+			...authenticationDescription,
+			...categoryDescription,
+			...contactDescription,
+			...phoneCallDescription,
+			...supportGroupDescription,
+			...supporterDescription,
 			...ticketDescription,
+			...ticketEventDescription,
+			...ticketFilterDescription,
+			...ticketTypeDescription,
 		],
 	};
 }

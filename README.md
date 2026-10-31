@@ -20,7 +20,36 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-_List the operations supported by your node._
+The node supports every endpoint of the Heinzelmann REST API. Parameters are sent as query parameters, as described in the API documentation.
+
+| Resource | Operation | Endpoint |
+| --- | --- | --- |
+| Authentication | Login | `POST /api/auth/login` |
+| Category | Get Many | `GET /api/GetCategories` |
+| Contact | Get by Phone Number | `GET /api/ContactByPhoneNumber/{PhoneNumber}` |
+| Contact | Get Many | `GET /api/GetContacts` |
+| Contact | Get Recent Tickets | `GET /api/Contact/{ContactID}/Tickets` |
+| Phone Call | Create | `POST /api/SaveTapiCall` |
+| Phone Call | Get Many | `GET /api/TapiCalls/{CallState}` |
+| Phone Call | Save Note | `POST /api/SaveCallNotice` |
+| Support Group | Get Many | `GET /api/GetGroups` |
+| Supporter | Get Many | `GET /api/GetSupporters` |
+| Ticket | Add Device | `POST /api/AddDeviceToTicket` |
+| Ticket | Add Document | `POST /api/AddDocumentToTicket` |
+| Ticket | Close | `POST /api/CloseTicket` |
+| Ticket | Create | `POST /api/AddTicket` |
+| Ticket | Delete | `POST /api/DeleteTicket` |
+| Ticket | Get | `GET /api/GetTicket` |
+| Ticket | Get Many | `GET /api/GetTickets` |
+| Ticket | Mark as Done | `POST /api/SetTicketStatusDone` |
+| Ticket | Reopen | `POST /api/ReopenTicket` |
+| Ticket | Update | `POST /api/UpdateTicket` |
+| Ticket Event | Create | `POST /api/AddTicketEvent` |
+| Ticket Event | Update | `POST /api/UpdateTicketEvent` |
+| Ticket Filter | Get Many | `GET /api/GetFilters` |
+| Ticket Type | Get Many | `GET /api/GetTickettypes` |
+
+The Heinzelmann API does not support pagination. "Get Many" operations always request all results, and the **Limit** option only trims the results that were received.
 
 ## Credentials
 

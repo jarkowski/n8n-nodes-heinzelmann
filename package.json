@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jarkowski/n8n-nodes-heinzelmann.git"
+    "url": "git+https://github.com/jarkowski/n8n-nodes-heinzelmann.git"
   },
   "scripts": {
     "build": "n8n-node build",

@@ -49,7 +49,12 @@ export class HeinzelmannApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			url: '/GetTickets', // TODO: replace with a real authenticated endpoint of the Heinzelmann API
+			url: '/api/GetGroups',
+			method: 'GET',
+			headers: { Accept: 'application/json' },
+			json: true,
+			// Do not follow a redirect to a login page, which would return 200 for an invalid token
+			disableFollowRedirect: true,
 		},
 	};
 }

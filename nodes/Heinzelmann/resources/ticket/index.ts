@@ -96,11 +96,13 @@ export const ticketDescription: INodeProperties[] = [
 					},
 				},
 			},
+			// The API has no pagination and this operation has no Return All/Limit fields, so "Get All" is accurate
+			/* eslint-disable n8n-nodes-base/node-param-option-name-wrong-for-get-many, n8n-nodes-base/node-param-operation-option-action-wrong-for-get-many, n8n-nodes-base/node-param-operation-option-description-wrong-for-get-many */
 			{
-				name: 'Get Many',
+				name: 'Get All',
 				value: 'getAll',
-				action: 'Get many tickets',
-				description: 'Get many tickets, optionally filtered by a ticket list filter',
+				action: 'Get all tickets',
+				description: 'Get all tickets, optionally filtered by a ticket list filter',
 				routing: {
 					request: {
 						method: 'GET',
@@ -108,6 +110,7 @@ export const ticketDescription: INodeProperties[] = [
 					},
 				},
 			},
+			/* eslint-enable n8n-nodes-base/node-param-option-name-wrong-for-get-many, n8n-nodes-base/node-param-operation-option-action-wrong-for-get-many, n8n-nodes-base/node-param-operation-option-description-wrong-for-get-many */
 			{
 				name: 'Mark as Done',
 				value: 'markAsDone',

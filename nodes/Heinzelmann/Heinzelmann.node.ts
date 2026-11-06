@@ -21,6 +21,7 @@ export class Heinzelmann implements INodeType {
 		defaults: {
 			name: 'Heinzelmann',
 		},
+		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [{ name: 'heinzelmannApi', required: true }],

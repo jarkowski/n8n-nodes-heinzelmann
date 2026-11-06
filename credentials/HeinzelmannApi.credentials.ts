@@ -16,7 +16,7 @@ export class HeinzelmannApi implements ICredentialType {
 	} as const;
 
 	// Link to your community node's README
-	documentationUrl = 'https://github.com/org/-heinzelmann?tab=readme-ov-file#credentials';
+	documentationUrl = 'https://github.com/jarkowski/n8n-nodes-heinzelmann/blob/main/README.md#credentials';
 
 	properties: INodeProperties[] = [
 		{

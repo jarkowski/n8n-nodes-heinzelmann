@@ -26,4 +26,4 @@ Tested with n8n Version 2.46.6
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-* _Link to app/service documentation._
+* [FCS Heinzelmann Service.Desk](https://www.fair-computer.de/produkte/heinzelmann_servicedesk/)

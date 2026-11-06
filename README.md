@@ -24,7 +24,6 @@ The node supports every endpoint of the Heinzelmann REST API. Parameters are sen
 
 | Resource | Operation | Endpoint |
 | --- | --- | --- |
-| Authentication | Login | `POST /api/auth/login` |
 | Category | Get Many | `GET /api/GetCategories` |
 | Contact | Get by Phone Number | `GET /api/ContactByPhoneNumber/{PhoneNumber}` |
 | Contact | Get Many | `GET /api/GetContacts` |

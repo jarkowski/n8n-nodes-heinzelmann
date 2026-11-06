@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-heinzelmann",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "n8n node for FCS Heinzelmann",
   "license": "MIT",
   "homepage": "https://github.com/jarkowski/n8n-nodes-heinzelmann",

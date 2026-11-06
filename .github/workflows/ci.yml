@@ -3,10 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches:
-      - main
-      - develop
-      - testing
+
 
 # Cancel in-progress runs for the same branch/PR to avoid wasting CI minutes.
 concurrency:

@@ -35,6 +35,7 @@ export class HeinzelmannApi implements ICredentialType {
 			typeOptions: { password: true },
 			required: true,
 			default: '',
+			description: 'Access token for authenticating with the Heinzelmann API. Starts with eyJ. Do NOT add bearer prefix here, enter the token as is',
 		},
 	];
 

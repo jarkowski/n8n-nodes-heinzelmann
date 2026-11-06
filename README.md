@@ -17,7 +17,14 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Credentials
 
-A Heinzelmann OAuth API bearer token is needed. When logged in to Heinzelmann, this token can be obtained in the top right user menu, using "OAuth2 Access Token". The feature must be activated in the settings first.
+A Heinzelmann OAuth API bearer token is needed. When logged in to Heinzelmann, this token can be obtained in the top right user menu, using "OAuth2 Access Token".
+
+<img width="318" height="271" alt="Heinzelmann-OAuth2" src="https://github.com/user-attachments/assets/8809becd-71f9-4192-bd8a-3253ac949d70" />
+
+The feature must be activated in the settings first.
+
+<img width="616" height="82" alt="Heinzelmann-OAuth2-Setting" src="https://github.com/user-attachments/assets/d7185701-b43d-4f48-972a-09bae3030064" />
+
 
 ## Compatibility
 

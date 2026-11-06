@@ -1,5 +1,4 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { authenticationDescription } from './resources/authentication';
 import { categoryDescription } from './resources/category';
 import { contactDescription } from './resources/contact';
 import { phoneCallDescription } from './resources/phoneCall';
@@ -40,10 +39,6 @@ export class Heinzelmann implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Authentication',
-						value: 'authentication',
-					},
-					{
 						name: 'Category',
 						value: 'category',
 					},
@@ -82,7 +77,6 @@ export class Heinzelmann implements INodeType {
 				],
 				default: 'ticket',
 			},
-			...authenticationDescription,
 			...categoryDescription,
 			...contactDescription,
 			...phoneCallDescription,

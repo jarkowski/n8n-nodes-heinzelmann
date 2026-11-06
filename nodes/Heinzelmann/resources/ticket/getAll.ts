@@ -1,5 +1,4 @@
 import type { INodeProperties } from 'n8n-workflow';
-import { getManyDescription } from '../../shared/getMany';
 
 const showOnlyForTicketGetMany = {
 	operation: ['getAll'],
@@ -7,7 +6,6 @@ const showOnlyForTicketGetMany = {
 };
 
 export const ticketGetManyDescription: INodeProperties[] = [
-	...getManyDescription('ticket'),
 	{
 		displayName: 'Filters',
 		name: 'filters',

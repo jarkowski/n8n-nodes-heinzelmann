@@ -1,6 +1,6 @@
 # n8n-nodes-heinzelmann
 
-This is an n8n community node. It lets you use FCS Heinzelmann in your n8n workflows.
+This is an n8n community node. It lets you use [FCS Heinzelmann Service.Desk](https://www.fair-computer.de/produkte/heinzelmann_servicedesk/) in your n8n workflows.
 
 This is an experimental first look release. Expect bugs.
 

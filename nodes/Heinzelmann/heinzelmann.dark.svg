@@ -1,17 +1,9 @@
-<svg role="img" aria-label="Gnome icon, dark theme" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-<g stroke="#EDE8DF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
-<ellipse cx="100" cy="236" rx="24" ry="12" fill="#7A5638"></ellipse>
-<ellipse cx="156" cy="236" rx="24" ry="12" fill="#7A5638"></ellipse>
-<path d="M76 166 C64 190 64 220 80 232 L176 232 C192 220 192 190 180 166 Z" fill="#E8913A"></path>
-<rect x="54" y="184" width="26" height="22" rx="10" fill="#D9CCB0"></rect>
-<rect x="176" y="184" width="26" height="22" rx="10" fill="#D9CCB0"></rect>
-<path d="M70 136 C68 160 76 182 88 196 L82 205 L98 207 L96 219 L112 215 L128 238 L144 215 L160 219 L158 207 L174 205 L168 196 C180 182 188 160 186 136 Z" fill="#F4F1EA"></path>
-<path d="M196 66 L196 76" fill="none"></path>
-<path d="M62 124 C60 70 110 20 170 22 C192 24 200 44 196 66 C182 56 170 62 172 80 C176 98 190 110 194 124 Z" fill="#4DB46E"></path>
-<path d="M196 75 L199.2 83.5 L208.4 84 L201.2 89.7 L203.6 98.5 L196 93.5 L188.4 98.5 L190.8 89.7 L183.6 84 L192.8 83.5 Z" fill="#FFD25C" stroke-width="4"></path>
-<rect x="52" y="110" width="152" height="32" rx="16" fill="#D9CCB0"></rect>
-<ellipse cx="100" cy="150" rx="9" ry="6" fill="#F7A8A8" stroke="none"></ellipse>
-<ellipse cx="156" cy="150" rx="9" ry="6" fill="#F7A8A8" stroke="none"></ellipse>
-<ellipse cx="128" cy="150" rx="20" ry="15" fill="#F0A588"></ellipse>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img">
+<title>HEINZELMANN Service.Desk Icon — Dark</title>
+<desc>Vektorversion nach dem gelieferten Original, mit transparentem Hintergrund.</desc>
+<defs><radialGradient id="rim" cx="50%" cy="50%" r="50%"><stop offset="0.0%" stop-color="#494949"/><stop offset="70.0%" stop-color="#494949"/><stop offset="84.0%" stop-color="#494949"/><stop offset="85.9%" stop-color="#494949"/><stop offset="86.0%" stop-color="#494949"/><stop offset="87.0%" stop-color="#4A4A4A"/><stop offset="88.0%" stop-color="#4D4D4D"/><stop offset="89.0%" stop-color="#4F4F4F"/><stop offset="90.0%" stop-color="#535353"/><stop offset="91.0%" stop-color="#555555"/><stop offset="92.0%" stop-color="#595959"/><stop offset="93.0%" stop-color="#5B5B5B"/><stop offset="94.0%" stop-color="#5D5D5D"/><stop offset="95.0%" stop-color="#606060"/><stop offset="96.0%" stop-color="#626262"/><stop offset="97.0%" stop-color="#636363"/><stop offset="98.0%" stop-color="#646464"/><stop offset="100.0%" stop-color="#646464"/></radialGradient></defs>
+<circle cx="600" cy="600" r="589.5" fill="url(#rim)"/>
+<circle cx="600" cy="600" r="506" fill="#A8A8A8"/>
+<g fill="#2B2B2B" stroke="none"><path d="M 590,231 L 578,245 L 435,505 L 344,677 L 858,676 L 623,240 L 610,229 L 598,228 Z"/>
+<path d="M 244,863 L 253,876 L 265,884 L 935,886 L 942,884 L 954,873 L 958,854 L 909,753 L 293,754 L 247,851 Z"/></g>
 </svg>

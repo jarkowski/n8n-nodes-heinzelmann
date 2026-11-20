@@ -28,7 +28,7 @@ The feature must be activated in the settings first.
 
 ## Compatibility
 
-Tested with n8n Version 2.46.6
+Tested with n8n Version 2.48.6
 
 ## Resources
 
